@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barklay Mogeni Okero - Road Safety Advocate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .profile-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        
+        .advocacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .advocacy-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .advocacy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .advocacy-card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-placeholder {
+                margin: 0 auto;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        .media-gallery {
+            margin-top: 2rem;
+        }
+        
+        .media-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .media-tab {
+            padding: 0.75rem 1.5rem;
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #667eea;
+            transition: all 0.3s;
+        }
+        
+        .media-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .media-tab:hover {
+            transform: translateY(-2px);
+        }
+        
+        .media-content {
+            display: none;
+        }
+        
+        .media-content.active {
+            display: block;
+        }
+        
+        .video-grid, .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .video-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .video-item iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+        
+        .video-caption, .image-caption {
+            padding: 1rem;
+            background: #f8f9fa;
+            font-size: 0.9rem;
+        }
+        
+        .image-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #f8f9fa;
+        }
+        
+        .image-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .add-media-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .add-media-section h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+        
+        .add-media-section code {
+            background: #2c3e50;
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+        
+        .add-media-section pre {
+            background: #2c3e50;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Barklay Mogeni Okero</h1>
+        <p>Road Safety Advocate | Champion for Safer Communities</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#advocacy">Advocacy Work</a></li>
+            <li><a href="#media">Media Gallery</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="profile-placeholder">BMO</div>
+            <div>
+                <p>I am a humanitarian operations professional with 5+ years' experience in disaster preparedness and response, emergency coordination, data entry, and community engagement. At Kenya Red Cross, I manage incident reporting, RCAT dispatch, and call intake to ensure rapid mobilization during crises.</p>
+                <p style="margin-top: 1rem;">My expertise in accurate documentation, data management tools (Excel, Kobo Toolbox/ODK), and community mobilization has shaped my commitment to road safety advocacy. I believe that building resilient communities starts with preventing avoidable tragedies on our roads.</p>
+                <p style="margin-top: 1rem;"><strong>Core Skills:</strong> Complaint Management • Problem Solving • Data Collection • Soft Skills • Customer Service • Emergency Response</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="advocacy">
+        <h2>Advocacy Work</h2>
+        <div class="advocacy-grid">
+            <div class="advocacy-card">
+                <h3>🚦 Community Education</h3>
+                <p>Organizing workshops and seminars to educate communities about road safety practices, pedestrian rights, and responsible driving.</p>
+            </div>
+            <div class="advocacy-card">
+                <h3>📢 Awareness Campaigns</h3>
+                <p>Leading public awareness campaigns on social media and in communities to highlight the importance of road safety measures.</p>
+            </div>
+            <div class="advocacy-card">
+                <h3>🏛️ Policy Advocacy</h3>
+                <p>Engaging with policymakers to strengthen road safety regulations and enforcement mechanisms at local and national levels.</p>
+            </div>
+            <div class="advocacy-card">
+                <h3>👨‍👩‍👧‍👦 Youth Programs</h3>
+                <p>Developing educational programs for schools and youth groups to instill safe road behavior from an early age.</p>
+            </div>
+            <div class="advocacy-card">
+                <h3>📊 Research & Data</h3>
+                <p>Conducting research and analyzing traffic data to identify high-risk areas and develop evidence-based interventions.</p>
+            </div>
+            <div class="advocacy-card">
+                <h3>🤝 Partnerships</h3>
+                <p>Collaborating with NGOs, government agencies, and international organizations to amplify road safety efforts.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="media">
+        <h2>Media Gallery</h2>
+        
+        <div class="media-tabs">
+            <div class="media-tab active" onclick="showMedia('videos')">Videos</div>
+            <div class="media-tab" onclick="showMedia('images')">Photos & Infographics</div>
+        </div>
+        
+        <!-- Videos Section -->
+        <div id="videos" class="media-content active">
+            <div class="video-grid">
+                <!-- Example YouTube Video - Replace with your videos -->
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <div class="video-caption">
+                        <strong>Example Video Title</strong><br>
+                        Description of your road safety campaign or advocacy video.
+                    </div>
+                </div>
+                
+                <!-- Add more videos by copying the video-item div above -->
+            </div>
+            
+            <div class="add-media-section">
+                <h3>📹 How to Add YouTube Videos</h3>
+                <p>1. Go to your YouTube video and click "Share" → "Embed"</p>
+                <p>2. Copy the embed code</p>
+                <p>3. Replace the example video above with your embed URL</p>
+                <p>Example format:</p>
+                <pre>&lt;div class="video-item"&gt;
+    &lt;iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;div class="video-caption"&gt;
+        &lt;strong&gt;Your Video Title&lt;/strong&gt;&lt;br&gt;
+        Your video description
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+        
+        <!-- Images Section -->
+        <div id="images" class="media-content">
+            <div class="image-grid">
+                <!-- Example Image - Replace with your images -->
+                <div class="image-item">
+                    <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Road+Safety+Campaign" alt="Campaign photo">
+                    <div class="image-caption">
+                        <strong>Example Campaign Photo</strong><br>
+                        Community awareness event on road safety.
+                    </div>
+                </div>
+                
+                <div class="image-item">
+                    <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Infographic" alt="Safety infographic">
+                    <div class="image-caption">
+                        <strong>Safety Infographic</strong><br>
+                        Key statistics and tips for safer roads.
+                    </div>
+                </div>
+                
+                <!-- Add more images by copying the image-item div above -->
+            </div>
+            
+            <div class="add-media-section">
+                <h3>🖼️ How to Add Images & Infographics</h3>
+                <p>1. Upload your images to a hosting service (Google Drive, Imgur, etc.)</p>
+                <p>2. Get the direct image link</p>
+                <p>3. Replace the placeholder images above</p>
+                <p>Example format:</p>
+                <pre>&lt;div class="image-item"&gt;
+    &lt;img src="YOUR_IMAGE_URL" alt="Description"&gt;
+    &lt;div class="image-caption"&gt;
+        &lt;strong&gt;Image Title&lt;/strong&gt;&lt;br&gt;
+        Image description
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+    </section>
+    
+    <section id="impact">
+        <h2>Impact & Achievements</h2>
+        <div class="impact-stats">
+            <div class="stat-card">
+                <span class="stat-number">500+</span>
+                <span>People Educated</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">15</span>
+                <span>Campaigns Led</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">10+</span>
+                <span>Communities Reached</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-form">
+            <p style="text-align: center; margin-bottom: 2rem;">Interested in collaboration or want to learn more about road safety? Reach out!</p>
+            <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Barklay Mogeni Okero. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/barklay-okero" target="_blank" title="LinkedIn">LinkedIn</a>
+            <a href="https://twitter.com/barklay_okero" target="_blank" title="Twitter">@barklay_okero</a>
+            <a href="mailto:barklayokero96@gmail.com" title="Personal Email">Personal Email</a>
+            <a href="mailto:254roadsafety.guardians@gmail.com" title="Road Safety Email">Road Safety Email</a>
+        </div>
+    </footer>
+    
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! This is a demo form. In a live site, this would send your message.');
+            event.target.reset();
+        }
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
